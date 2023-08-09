@@ -5,12 +5,20 @@
 class GoreleaserPlayground < Formula
   desc "goreleaser-playground"
   homepage "https://github.com/nwtgck/goreleaser-playground"
-  version "0.1.2"
+  version "0.1.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.2/goreleaser-playground-0.1.2-darwin-amd64.tar.gz"
-      sha256 "6c5df0c56c808aa08ae1514519504240942ddb4df9a6039a76eb6057e6ced9d2"
+      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.3/goreleaser-playground-0.1.3-darwin-amd64.tar.gz"
+      sha256 "b165d13e732ee1a760fadf7a8c08fcb5681ecece0ca968b985b52943f4c21f2d"
+
+      def install
+        bin.install "goreleaser-playground"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.3/goreleaser-playground-0.1.3-darwin-arm64.tar.gz"
+      sha256 "5806f47c39ad9fd312091ce5d176f7fdcea5ad63dbd8887916a1773a127aa610"
 
       def install
         bin.install "goreleaser-playground"
@@ -19,25 +27,25 @@ class GoreleaserPlayground < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.2/goreleaser-playground-0.1.2-linux-amd64.tar.gz"
-      sha256 "aa5f5f499b6051b88da8e15e3a6ef308ebf667ce6b7294df7943f8d3bfc59b90"
-
-      def install
-        bin.install "goreleaser-playground"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.2/goreleaser-playground-0.1.2-linux-armv6.tar.gz"
-      sha256 "bc34022e7973159630a3ee7eaac778cf4612dcff41d76a8551c3da659413f422"
+      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.3/goreleaser-playground-0.1.3-linux-armv6.tar.gz"
+      sha256 "f87c3026fed0afb52600a2a63a5983ca9d18af95d7f70ceef671d83154d98c72"
 
       def install
         bin.install "goreleaser-playground"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.2/goreleaser-playground-0.1.2-linux-arm64.tar.gz"
-      sha256 "d0a777417d8e5331776575805fd065fa2ce60167aba57a211cd925f0309476f2"
+      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.3/goreleaser-playground-0.1.3-linux-arm64.tar.gz"
+      sha256 "c81a3094f186a5c78ff65ded9a610f9c710530feb73ee67868531411b7991577"
+
+      def install
+        bin.install "goreleaser-playground"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/nwtgck/goreleaser-playground/releases/download/v0.1.3/goreleaser-playground-0.1.3-linux-amd64.tar.gz"
+      sha256 "c2d5045e9b890532870597113fc0b8c2ab4d0735e2e3be834c36f3fefaef6aaa"
 
       def install
         bin.install "goreleaser-playground"
